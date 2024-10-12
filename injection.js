@@ -99,7 +99,7 @@ function modifyCode(text) {
 		let tickLoop = {};
 		let renderTickLoop = {};
 
-		let lastJoined, velocityhori, velocityvert, chatdisablermsg, textguifont, textguisize, textguishadow, attackedEntity, stepheight;
+		let lastJoined, velocityhori, velocityvert, ChatSpammermsg, textguifont, textguisize, textguishadow, attackedEntity, stepheight;
 		let attackTime = Date.now();
 		let chatDelay = Date.now();
 
@@ -203,10 +203,10 @@ function modifyCode(text) {
 		}
 	`);
 	addReplacement('ClientSocket.on("CPacketMessage",$=>{', `
-		if (player$1 && $.text && !$.text.startsWith(player$1.name) && enabledModules["ChatDisabler"] && chatDelay < Date.now()) {
+		if (player$1 && $.text && !$.text.startsWith(player$1.name) && enabledModules["ChatSpammer"] && chatDelay < Date.now()) {
 			chatDelay = Date.now() + 1000;
 			setTimeout(function() {
-				ClientSocket.sendPacket(new SPacketMessage({text: Math.random() + ("\\n" + chatdisablermsg[1]).repeat(20)}));
+				ClientSocket.sendPacket(new SPacketMessage({text: Math.random() + ("\\n" + ChatSpammermsg[1]).repeat(20)}));
 			}, 50);
 		}
 
@@ -1040,8 +1040,8 @@ function modifyCode(text) {
 			new Module("AutoRejoin", function() {});
 			new Module("AutoQueue", function() {});
 			new Module("AutoVote", function() {});
-			const chatdisabler = new Module("ChatDisabler", function() {});
-			chatdisablermsg = chatdisabler.addoption("Message", String, "github.com/ZombifiedV2/VapeForMiniblox");
+			const ChatSpammer = new Module("ChatSpammer", function() {});
+			ChatSpammermsg = ChatSpammer.addoption("Message", String, "github.com/ZombifiedV2/VapeForMiniblox");
 			new Module("FilterBypass", function() {});
 
 			const survival = new Module("SurvivalMode", function(callback) {
