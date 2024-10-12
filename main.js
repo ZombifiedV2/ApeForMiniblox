@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         ManFace V4
+// @name         ApeV4 By ManfaceExploits
 // @namespace    http://7granddadpgn.github.io
 // @version      2024-07-29
 // @description  A browser script made to give enhancements on miniblox.io
