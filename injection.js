@@ -809,14 +809,14 @@ function modifyCode(text) {
 			textgui.toggle();
 			new Module("AutoRespawn", function() {});
 
-			// Breaker
-			let breakerrange;
-			const breaker = new Module("Breaker", function(callback) {
+			// Nuker
+			let Nukerrange;
+			const Nuker = new Module("Nuker", function(callback) {
 				if (callback) {
 					let attemptDelay = {};
-					tickLoop["Breaker"] = function() {
+					tickLoop["Nuker"] = function() {
 						if (breakStart > Date.now()) return;
-						let offset = breakerrange[1];
+						let offset = Nukerrange[1];
 						for (const block of BlockPos.getAllInBoxMutable(new BlockPos(player$1.pos.x - offset, player$1.pos.y - offset, player$1.pos.z - offset), new BlockPos(player$1.pos.x + offset, player$1.pos.y + offset, player$1.pos.z + offset))) {
 							if (game$1.world.getBlockState(block).getBlock() instanceof BlockDragonEgg) {
 								if ((attemptDelay[block] || 0) > Date.now()) continue;
@@ -828,9 +828,9 @@ function modifyCode(text) {
 						}
 					}
 				}
-				else delete tickLoop["Breaker"];
+				else delete tickLoop["Nuker"];
 			});
-			breakerrange = breaker.addoption("Range", Number, 10);
+			Nukerrange = Nuker.addoption("Range", Number, 10);
 
 			function getItemStrength(stack) {
 				if (stack == null) return 0;
