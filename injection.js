@@ -552,17 +552,17 @@ function modifyCode(text) {
 			new Module("WTap", function() {});
 
 			// AntiVoid
-			new Module("AntiFall", function(callback) {
+			new Module("AntiVoid", function(callback) {
 				if (callback) {
 					let ticks = 0;
-					tickLoop["AntiFall"] = function() {
+					tickLoop["AntiVoid"] = function() {
         				const ray = rayTraceBlocks(player$1.getEyePos(), player$1.getEyePos().clone().setY(0), false, false, false, game$1.world);
 						if (player$1.fallDistance > 2.8 && !ray) {
 							player$1.motion.y = 0;
 						}
 					};
 				}
-				else delete tickLoop["AntiFall"];
+				else delete tickLoop["AntiVoid"];
 			});
 
 			// Killaura
