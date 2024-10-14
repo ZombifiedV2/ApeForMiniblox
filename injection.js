@@ -1041,7 +1041,7 @@ function modifyCode(text) {
 			new Module("AutoQueue", function() {});
 			new Module("AutoVote", function() {});
 			const ChatSpammer = new Module("ChatSpammer", function() {});
-			ChatSpammermsg = ChatSpammer.addoption("Message", String, "github.com/ZombifiedV2/VapeForMiniblox");
+			ChatSpammermsg = ChatSpammer.addoption("Message", String, "github.com/ZombifiedV2/ApeForMiniblox");
 			new Module("FilterBypass", function() {});
 
 			const survival = new Module("SurvivalMode", function(callback) {
