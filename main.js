@@ -17,7 +17,7 @@
 
 	async function execute(url, oldScript) {
 		if (oldScript) oldScript.type = 'javascript/blocked';
-		let data = await fetch("https://raw.githubusercontent.com/ZombifiedV2/VapeForMiniblox/main/injection.js").then(e => e.text());
+		let data = await fetch("https://raw.githubusercontent.com/ZombifiedV2/ApeForMiniblox/main/injection.js").then(e => e.text());
 		if (oldScript) oldScript.type = 'module';
 		eval(data.replace("scripturl", url));
 	}
