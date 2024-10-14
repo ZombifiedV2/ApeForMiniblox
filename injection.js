@@ -355,7 +355,7 @@ function modifyCode(text) {
 		if (_ == "GrandDad") {
 			const $ = skins[_];
 			return new Promise((et, tt) => {
-				textureManager.loader.load("https://raw.githubusercontent.com/ZombifiedV2/VapeForMiniblox/main/assets/skin2.png", rt => {
+				textureManager.loader.load("https://raw.githubusercontent.com/ZombifiedV2/ApeForMiniblox/main/assets/skin2.png", rt => {
 					const nt = {
 						atlas: rt,
 						id: _,
